@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 启动 SpringMVC 的注解功能，它会自动注册 HandlerMapping、HandlerAdapter、ExceptionResolver -->
+    <mvc:annotation-driven/>
+
+    <mvc:default-servlet-handler/>
+
+    <context:component-scan base-package="com.jiwenjie.dao"/>
+
+    <!-- 配置整合mybatis-->
+    <!-- 配置数据库-->
+    <context:property-placeholder ignore-unresolvable="true" location="classpath:jdbc.properties"/>
+
+    <!--2.数据库连接池-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+
+        <!--配置连接池属性-->
+        <property name="driverClass" value="${jdbc.driver}"/>
+
+        <!-- 基本属性 url、user、password -->
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+
+        <!-- c3p0私有属性 -->
+        <property name="maxPoolSize" value="${jdbc.maxPoolSize}"/>
+        <property name="minPoolSize" value="${jdbc.minPoolSize}"/>
+        <property name="initialPoolSize" value="${jdbc.initialPoolSize}"/>
+
+        <!-- 关闭连接后不自动 commit -->
+        <property name="autoCommitOnClose" value="false"/>
+        <property name="breakAfterAcquireFailure" value="false"/>
+        <!-- 获取连接超时时间 -->
+        <property name="checkoutTimeout" value="${jdbc.checkoutTimeout}"/>
+        <!-- 当获取连接失败重试次数 -->
+        <property name="acquireRetryAttempts" value="${jdbc.acquireRetryAttempts}"/>
+
+        <property name="acquireIncrement" value="${jdbc.acquireIncrement}"/>
+        <property name="maxConnectionAge" value="${jdbc.maxConnectionAge}"/>
+        <property name="maxIdleTime" value="${jdbc.maxIdleTime}"/>
+        <property name="idleConnectionTestPeriod" value="${jdbc.idleConnectionTestPeriod}"/>
+        <property name="maxStatements" value="${jdbc.maxStatements}"/>
+    </bean>
+
+    <!-- 3.配置 SqlSessionFactory 对象 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--注入数据库连接池-->
+        <property name="dataSource" ref="dataSource"/>
+
+        <!--配置 mybatis 全局配置文件: mybatis-config.xml -->
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+
+        <!--com.kuky.entity 包,使用别名,多个用;隔开-->
+        <property name="typeAliasesPackage" value="com.jiwenjie.entity"/>
+
+        <!-- 扫描 sql 配置文件:mapper 需要的 xml 文件 -->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+
+    <!-- 4.配置扫描 Dao 接口包,动态实现 Dao 接口，注入到 Spring 容器 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 注入 SqlSessionFactory -->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+
+        <!-- 给出需要扫描的 Dao 接口 -->
+        <property name="basePackage" value="com.jiwenjie.dao"/>
+    </bean>
+
+    <mvc:interceptors>
+        <!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置-->
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+
+        <!-- 登录权限拦截器 -->
+        <bean class="com.jiwenjie.common.interceptor.AuthorizationInterceptor"/>
+
+        <!-- 管理员权限拦截器 -->
+        <!--<bean class="com.kuky.common.interceptor.AdminInterceptor"/>-->
+    </mvc:interceptors>
+</beans>
