@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jiwenjie.dao.CollectDao">
+
+    <!--&lt;!&ndash; 配置数据库字段名和实体类对应 &ndash;&gt;-->
+    <!--<resultMap id="user" type="com.jiwenjie.entity.User">-->
+        <!--<result property="isAdmin" column="is_admin"/>-->
+    <!--</resultMap>-->
+
+    <!--<resultMap id="userFile" type="com.jiwenjie.entity.UserFile">-->
+        <!--<result property="fileName" column="file_name"/>-->
+        <!--<result property="filePath" column="file_path"/>-->
+    <!--</resultMap>-->
+
+    <!--<select id="getAllUser" resultType="user">-->
+        <!--SELECT id, username, phone, avatar, is_admin FROM users-->
+    <!--</select>-->
+
+    <!--<select id="findUserById" resultType="user" parameterType="java.lang.Integer">-->
+        <!--SELECT id, username, phone, avatar, is_admin FROM  users WHERE id = #{id}-->
+    <!--</select>-->
+
+    <!--<update id="setStaffUser" parameterType="java.lang.Integer">-->
+        <!--UPDATE users SET is_admin = 1 WHERE id = #{id}-->
+    <!--</update>-->
+
+    <!--<insert id="registerUser" parameterType="java.lang.String">-->
+        <!--INSERT INTO users (username, password, phone) VALUES (#{username}, #{password}, #{phone})-->
+    <!--</insert>-->
+
+    <!--<select id="userLogin" parameterType="java.lang.String" resultType="user">-->
+        <!--SELECT id, username, phone, avatar, is_admin FROM users WHERE username = #{username} AND password = #{password}-->
+    <!--</select>-->
+
+    <!--<select id="findUserByName" parameterType="java.lang.String" resultType="user">-->
+        <!--SELECT id, username, phone, avatar, is_admin FROM users WHERE username=#{username}-->
+    <!--</select>-->
+
+    <!--<select id="findUserByPhone" parameterType="java.lang.String" resultType="user">-->
+        <!--SELECT id, username, phone, avatar, is_admin FROM  users WHERE phone = #{phone}-->
+    <!--</select>-->
+
+    <!--<update id="uploadAvatar" parameterType="user">-->
+        <!--UPDATE users SET avatar = #{avatar} WHERE id = #{id}-->
+    <!--</update>-->
+
+    <!--<insert id="uploadFile" parameterType="user">-->
+        <!--INSERT INTO user_files (file_name, file_path, u_id) VALUES (#{fileName}, #{filePath}, #{id})-->
+    <!--</insert>-->
+
+    <!--<select id="getUserFileList" parameterType="java.lang.Integer" resultType="userFile">-->
+        <!--SELECT id, file_name, file_path FROM user_files WHERE u_id = #{id}-->
+    <!--</select>-->
+
+    <!--<select id="findUserFileById" parameterType="java.lang.Integer" resultMap="userFile">-->
+        <!--SELECT id, file_name, file_path FROM  user_files WHERE id = #{fileId} and u_id = #{id}-->
+    <!--</select>-->
+
+    <!--<delete id="deleteFileById" parameterType="java.lang.Integer">-->
+        <!--DELETE FROM user_files WHERE id = #{fileId} AND u_id = #{id}-->
+    <!--</delete>-->
+</mapper>

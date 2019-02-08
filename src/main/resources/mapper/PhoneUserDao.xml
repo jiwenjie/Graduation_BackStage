@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jiwenjie.dao.PhoneUserDao">
+
+    <!-- 配置数据库字段名和实体类对应 -->
+    <resultMap id="phoneUser" type="com.jiwenjie.entity.PhoneUser"/>
+
+    <select id="findAllPhoneUser" resultType="phoneUser">
+        SELECT * FROM phoneuser
+    </select>
+
+    <insert id="registerPhoneUser">
+        INSERT INTO phoneuser (userid, username, password, userphone) VALUES (#{userid}, #{username}, #{password}, #{userphone})
+    </insert>
+
+    <select id="findUserByName" parameterType="java.lang.String" resultType="phoneUser">
+        SELECT * FROM phoneuser WHERE username = #{username}
+    </select>
+
+    <select id="findUserByPhone" parameterType="java.lang.String" resultType="phoneUser">
+        SELECT * FROM phoneuser WHERE userphone = #{userphone}
+    </select>
+
+    <select id="userLoginByName" parameterType="java.lang.String" resultType="phoneUser">
+        SELECT * FROM phoneuser WHERE username = #{username} AND password = #{password}
+    </select>
+
+    <select id="userLoginByPhone" parameterType="java.lang.String" resultType="phoneUser">
+        SELECT * FROM phoneuser WHERE userphone = #{userphone} AND password = #{password}
+    </select>
+
+    <update id="updateUserAvatar" parameterType="phoneUser">
+        UPDATE phoneuser SET avatar = #{avatar} WHERE userid = #{userid}
+    </update>
+
+    <update id="updateUserBgImage" parameterType="phoneUser">
+        UPDATE phoneuser SET bgimageurl = #{bgImageUrl} WHERE userid = #{userid}
+    </update>
+
+    <update id="updateUserInfo" parameterType="phoneUser">
+        UPDATE phoneuser SET username = #{username} and profile = #{profile} WHERE userid = #{userid}
+    </update>
+
+    <select id="getUserInfo" parameterType="java.lang.Integer">
+        SELECT * FROM phoneuser WHERE userid = #{userid}
+    </select>
+</mapper>

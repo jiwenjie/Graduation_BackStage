@@ -24,12 +24,6 @@ public interface UserDao {
 
     void registerUser(@Param("username") String username, @Param("password") String password, @Param("phone") String phone);
 
-    /**
-     * 测试注册
-     * @return
-     */
-    void register();
-
     User userLogin(@Param("username") String username, @Param("password") String password);
 
     User findUserByName(@Param("username") String username);

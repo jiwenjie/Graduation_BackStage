@@ -2,6 +2,8 @@ package com.jiwenjie.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.io.Serializable;
+
 /**
  * author: Jiwenjie
  * email: Jiwenjie97@gmail.com
@@ -9,8 +11,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
  * desc:
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UserFile {
-
+public class UserFile implements Serializable {
     private int id;
     private String fileName;
     private String filePath;

@@ -4,6 +4,7 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 /**
@@ -19,7 +20,7 @@ public class MD5Crypto {
             char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
                     '9', 'a', 'b', 'c', 'd', 'e', 'f'};
             MessageDigest md = MessageDigest.getInstance("md5");
-            md.update(inStr.getBytes("UTF-8"));
+            md.update(inStr.getBytes(StandardCharsets.UTF_8));
 
             byte[] bytes = md.digest();
             int j = bytes.length;

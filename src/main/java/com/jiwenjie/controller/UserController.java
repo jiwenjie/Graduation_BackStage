@@ -108,7 +108,7 @@ public class UserController {
 
         System.out.println("用户名：" + username);
         System.out.println("密码：" + password);
-//        password = MD5Crypto.encryptBASE64(MD5Crypto.MD5(password));
+        password = MD5Crypto.encryptBASE64(MD5Crypto.MD5(password));
         User user = userService.userLogin(username, password);
         if (user != null) {
             session.setAttribute(Constant.SESSION_USER, user);
@@ -225,7 +225,7 @@ public class UserController {
 //                            + UserFile.separator + user.getUsername() + UserFile.separator + "avatar"
 //                            + UserFile.separator + System.currentTimeMillis() + "." + suffix;
 
-                    String avatarPath = "C:" + File.separator + "ProjectsFolder" + File.separator + "IdeaProject"
+                    String avatarPath = "I:" + File.separator + "ProjectsFolder" + File.separator + "IdeaProject"
                             + File.separator + "MovieProject" + File.separator + "src" + File.separator + "main"
                             + File.separator + "webapp" + File.separator + "upload" + File.separator + user.getUsername()
                             + File.separator + "avatar" + File.separator + System.currentTimeMillis() + "." + suffix;
@@ -290,7 +290,6 @@ public class UserController {
                 if (!saveFile.getParentFile().exists()) {
                     saveFile.getParentFile().mkdirs();
                     saveFile.createNewFile();
-
                 }
 
                 file.transferTo(saveFile);
@@ -467,3 +466,6 @@ public class UserController {
     }
 }
 
+/**
+ * (https://github.com/izzyleung/ZhihuDailyPurify/wiki/%E7%9F%A5%E4%B9%8E%E6%97%A5%E6%8A%A5-API-%E5%88%86%E6%9E%90
+ * **/

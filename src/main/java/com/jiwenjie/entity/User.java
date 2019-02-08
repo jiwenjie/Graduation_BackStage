@@ -2,6 +2,7 @@ package com.jiwenjie.entity;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,8 +12,7 @@ import java.util.List;
  * desc:
  */
 @JsonInclude(JsonInclude.Include.NON_NULL) // 去除返回接口值为 null 的字段
-public class User {
-
+public class User implements Serializable {
     private Integer id;
     private String username;
     private String phone;
