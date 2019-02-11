@@ -2,6 +2,8 @@ package com.jiwenjie.service.impl;
 
 import com.jiwenjie.dao.CollectDao;
 import com.jiwenjie.entity.ArticleBaseBean;
+import com.jiwenjie.entity.UserArticle;
+import com.jiwenjie.entity.WanAndroidBean;
 import com.jiwenjie.service.CollectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,14 +22,43 @@ public class CollectServiceImpl implements CollectService {
     @Autowired
     private CollectDao collectDao;
 
-    /**
-     * 分页查询
-     * @param start 从哪个记录开始查询
-     * @param end   到哪个记录结束
-     * @return
-     */
     @Override
-    public List<ArticleBaseBean> getCollectArticle(int start, int end) {
-        return collectDao.searchCollectData(start, end);
+    public List<UserArticle> getListArticleId(String userId, int start, int end) {
+        return collectDao.getListArticleId(userId, start, end);
+    }
+
+    @Override
+    public List<UserArticle> getAllListInfo(int id) {
+        return collectDao.getAllListInfo(id);
+    }
+
+    @Override
+    public WanAndroidBean findBeanMessageById(int id) {
+        return collectDao.findBeanMessageById(id);
+    }
+
+    @Override
+    public int collectNewArticle(String apkLink, String author, int chapterId, String chapterName, boolean collect, int courseId, String desc, String envelopePic, boolean fresh, int id, String link, String niceDate, String origin, String projectLink, Long publishTime, int superChapterId, String superChapterName, String title, int type, int userId, int visible, int zan) {
+        return collectDao.collectNewArticle(apkLink, author, chapterId, chapterName, collect, courseId, desc, envelopePic, fresh, id, link, niceDate, origin, projectLink, publishTime, superChapterId, superChapterName, title, type, userId, visible, zan);
+    }
+
+    @Override
+    public int deleteArticle(int id) {
+        return collectDao.deleteArticle(id);
+    }
+
+    @Override
+    public int addArticleIdInUserArticle(String userId, int id) {
+        return collectDao.addArticleIdInUserArticle(userId, id);
+    }
+
+    @Override
+    public int deleteArticleIdInUserArticle(String userId, int id) {
+        return collectDao.deleteArticleIdInUserArticle(userId, id);
+    }
+
+    @Override
+    public int operationCollect(int userId, boolean operation) {
+        return collectDao.operationCollect(userId, operation);
     }
 }

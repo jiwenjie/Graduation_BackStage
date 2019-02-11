@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jiwenjie.dao.UserTodoDao">
+
+    <!-- 配置数据库字段名和实体类对应 -->
+    <resultMap id="bean" type="com.jiwenjie.entity.TodoBean" />
+
+    <insert id="createNewTask">
+        INSERT INTO todo(todoid, userid, title, content, time, complete) VALUES (#{id}, #{userid},
+                            #{title}, #{content}, #{time}, #{complete})
+    </insert>
+
+    <delete id="deleteTask">
+        DELETE FROM todo WHERE userid = #{userid} AND todoid = #{id}
+    </delete>
+
+    <update id="changeTaskStatus">
+        UPDATE todo SET complete = #{complete} WHERE userid = #{userid} AND todoid = #{id}
+    </update>
+
+    <select id="getListTask" resultType="bean">
+        SELECT * FROM todo WHERE userid = #{userid} LIMIT #{start}, #{end}
+    </select>
+
+</mapper>

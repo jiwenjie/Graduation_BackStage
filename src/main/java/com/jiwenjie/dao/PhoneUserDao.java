@@ -17,7 +17,7 @@ public interface PhoneUserDao {
 //                           @Param("password") String password,
 //                           @Param("userphone") String userphone);   // 注册用户，其他的参数在后台代码中设置
 
-    void registerPhoneUser(@Param("userid") long userid,
+    int registerPhoneUser(@Param("userid") String userid,
                            @Param("username") String username,
                            @Param("password") String password,
                            @Param("userphone") String userphone);   // 注册用户，其他的参数在后台代码中设置
@@ -35,16 +35,24 @@ public interface PhoneUserDao {
     PhoneUser userLoginByPhone(@Param("userphone") String userphone,
                                @Param("password") String password);   // 用户登陆通过手机号
 
-    void updateUserAvatar(@Param("userid") long userid,
+    int updateUserAvatar(@Param("userid") String userid,
                           @Param("avatar") String avatar);  // 更改用户头像
 
-    void updateUserBgImage(@Param("userid") long userid,
+    int updateUserBgImage(@Param("userid") String userid,
                            @Param("bgimageurl") String bgImageUrl); // 更改用户背景
 
-    void updateUserInfo(@Param("userid") long userid,
+    int updateUserInfo(@Param("userid") String userid,
                         @Param("username") String username,
                         @Param("profile") String profile);  // 更改用户信息，昵称、简介
 
-    PhoneUser getUserInfo(@Param("userid") long userid);     // 根据 userid 获取用户的信息，用以和上次做对比等等；
+    PhoneUser getUserInfo(@Param("userid") String userid);     // 根据 userid 获取用户的信息，用以和上次做对比等等；
                                                             // 登陆时长，连续多少天等等
+
+    int signUp(@Param("userid") String userId,
+               @Param("continuesigndays") int continuedays,
+               @Param("signintoday") boolean signintoday,
+               @Param("signintime") String signtime,
+               @Param("signintotaldays") int signtotalday);   // 用户签到
+
+    int logout(@Param("userid") String userId);   // 退出登陆
 }

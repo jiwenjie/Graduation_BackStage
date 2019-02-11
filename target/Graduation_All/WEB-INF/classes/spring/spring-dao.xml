@@ -76,7 +76,7 @@
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
 
         <!-- 登录权限拦截器 -->
-        <bean class="com.jiwenjie.common.interceptor.AuthorizationInterceptor"/>
+        <!--<bean class="com.jiwenjie.common.interceptor.AuthorizationInterceptor"/>-->
 
         <!-- 管理员权限拦截器 -->
         <!--<bean class="com.kuky.common.interceptor.AdminInterceptor"/>-->

@@ -3,11 +3,11 @@
 <body>
 <h2>Hello World!</h2>
 
-<form action="/phoneUser/login" method="post">
+<form action="/phoneUser/userSignUp" method="post">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/><br/>
-    账&nbsp;号：<input type="text" name="username"/>
+    账&nbsp;号：<input type="text" name="userid"/>
     <br/><br/>
-    密&nbsp;码：<input type="password" name="password"/>
+    密&nbsp;码：<input type="text" name="signtime"/>
     <%--<br/><br/>--%>
     <%--手机号：<input type="number" name="userphone"/>--%>
     <%--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--%>

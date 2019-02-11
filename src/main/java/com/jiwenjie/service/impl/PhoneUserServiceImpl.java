@@ -21,8 +21,8 @@ public class PhoneUserServiceImpl implements PhoneUserService {
     private PhoneUserDao userDao;
 
     @Override
-    public void registerPhoneUser(long userid, String username, String password, String userphone) {
-        userDao.registerPhoneUser(userid, username, password, userphone);
+    public int registerPhoneUser(String userid, String username, String password, String userphone) {
+        return userDao.registerPhoneUser(userid, username, password, userphone);
     }
 
     @Override
@@ -51,22 +51,32 @@ public class PhoneUserServiceImpl implements PhoneUserService {
     }
 
     @Override
-    public void updateUserAvatar(long userid, String avatar) {
-        userDao.updateUserAvatar(userid, avatar);
+    public int updateUserAvatar(String userid, String avatar) {
+        return userDao.updateUserAvatar(userid, avatar);
     }
 
     @Override
-    public void updateUserBgImage(long userid, String bgImageUrl) {
-        userDao.updateUserBgImage(userid, bgImageUrl);
+    public int updateUserBgImage(String userid, String bgImageUrl) {
+        return userDao.updateUserBgImage(userid, bgImageUrl);
     }
 
     @Override
-    public void updateUserInfo(long userid, String username, String profile) {
-        userDao.updateUserInfo(userid, username, profile);
+    public int updateUserInfo(String userid, String username, String profile) {
+        return userDao.updateUserInfo(userid, username, profile);
     }
 
     @Override
-    public PhoneUser getUserInfo(long userid) {
+    public PhoneUser getUserInfo(String userid) {
         return userDao.getUserInfo(userid);
+    }
+
+    @Override
+    public int signUp(String userId, int continuedays, boolean signintoday, String signtime, int signtotalday) {
+        return userDao.signUp(userId, continuedays, signintoday, signtime, signtotalday);
+    }
+
+    @Override
+    public int logout(String userId) {
+        return userDao.logout(userId);
     }
 }

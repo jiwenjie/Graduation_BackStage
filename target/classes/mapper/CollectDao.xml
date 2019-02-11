@@ -5,16 +5,12 @@
 
 <mapper namespace="com.jiwenjie.dao.CollectDao">
 
-    <!--&lt;!&ndash; 配置数据库字段名和实体类对应 &ndash;&gt;-->
-    <!--<resultMap id="user" type="com.jiwenjie.entity.User">-->
-        <!--<result property="isAdmin" column="is_admin"/>-->
-    <!--</resultMap>-->
+    <!-- 配置数据库字段名和实体类对应 -->
+    <resultMap id="wanAndroidBean" type="com.jiwenjie.entity.WanAndroidBean"/>
 
-    <!--<resultMap id="userFile" type="com.jiwenjie.entity.UserFile">-->
-        <!--<result property="fileName" column="file_name"/>-->
-        <!--<result property="filePath" column="file_path"/>-->
-    <!--</resultMap>-->
-
+    <select id="getCollectList" parameterType="java.lang.Integer" resultType="wanAndroidBean">
+        SELECT * FROM wanandroid LIMIT #{start}, #{end}
+    </select>
     <!--<select id="getAllUser" resultType="user">-->
         <!--SELECT id, username, phone, avatar, is_admin FROM users-->
     <!--</select>-->

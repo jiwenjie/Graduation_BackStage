@@ -50,17 +50,30 @@ public class CommonUtils {
     /**
      * 获取用户的 userid
      */
-    public static long getPhoneUserId() {
+    public static String getPhoneUserId() {
         long currentTime = System.currentTimeMillis();
-        return currentTime - Math.round(Math.random() * (MAX_NUM - MIN_NUM) + MAX_NUM) + MIN_NUM;
+        return String.valueOf(currentTime - Math.round(Math.random() * (MAX_NUM - MIN_NUM) + MAX_NUM) + MIN_NUM);
+    }
+
+    /**
+     * 获取用户 todoTask 的 id
+     */
+    public static String getUserTaskId() {
+        long currentTime = System.currentTimeMillis();
+        String time = String.valueOf(currentTime).substring(1, 4);
+        return String.valueOf(Long.parseLong(time) * Math.round(Math.random() * 7) + 151);
     }
 
     /**
      * 调用接口成功
      */
-    public static Map<String, Object> getDataSuccess(Map<String, Object> map) {
+    public static Map<String, Object> operationSucceed(Map<String, Object> map) {
+        return operationSucceed(map, "");
+    }
+
+    public static Map<String, Object> operationSucceed(Map<String, Object> map, String msg) {
         map.put("result", "succeed");
-        map.put("msg", "");
+        map.put("msg", msg);
         map.put("code", HttpStatus.OK.value());
         return map;
     }
@@ -68,10 +81,10 @@ public class CommonUtils {
     /**
      * 调用接口失败
      */
-    public static Map<String, Object> getDataFailed(Map<String, Object> map, String msg) {
+    public static Map<String, Object> operationFailed(Map<String, Object> map, String msg, int code) {
         map.put("result", "failed");
         map.put("msg", msg);
-        map.put("code", HttpStatus.NOT_FOUND.value());
+        map.put("code", code);
         return map;
     }
 }

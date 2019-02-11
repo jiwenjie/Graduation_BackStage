@@ -5,61 +5,47 @@
 
 <mapper namespace="com.jiwenjie.dao.CollectDao">
 
-    <!--&lt;!&ndash; 配置数据库字段名和实体类对应 &ndash;&gt;-->
-    <!--<resultMap id="user" type="com.jiwenjie.entity.User">-->
-        <!--<result property="isAdmin" column="is_admin"/>-->
-    <!--</resultMap>-->
+    <!-- 配置数据库字段名和实体类对应 -->
+    <resultMap id="wanAndroidBean" type="com.jiwenjie.entity.WanAndroidBean"/>
 
-    <!--<resultMap id="userFile" type="com.jiwenjie.entity.UserFile">-->
-        <!--<result property="fileName" column="file_name"/>-->
-        <!--<result property="filePath" column="file_path"/>-->
-    <!--</resultMap>-->
+    <resultMap id="userArticle" type="com.jiwenjie.entity.UserArticle">
+        <result property="id" column="articleid"/>
+    </resultMap>
 
-    <!--<select id="getAllUser" resultType="user">-->
-        <!--SELECT id, username, phone, avatar, is_admin FROM users-->
+    <!--<select id="getCollectList" parameterType="java.lang.Integer" resultType="wanAndroidBean">-->
+        <!--SELECT * FROM wanandroid LIMIT #{start}, #{end}-->
     <!--</select>-->
 
-    <!--<select id="findUserById" resultType="user" parameterType="java.lang.Integer">-->
-        <!--SELECT id, username, phone, avatar, is_admin FROM  users WHERE id = #{id}-->
-    <!--</select>-->
+    <select id="getListArticleId" resultType="userArticle">
+        SELECT * FROM user_article WHERE userid = #{userid} LIMIT #{start}, #{end}
+    </select>
 
-    <!--<update id="setStaffUser" parameterType="java.lang.Integer">-->
-        <!--UPDATE users SET is_admin = 1 WHERE id = #{id}-->
-    <!--</update>-->
+    <select id="getAllListInfo" resultType="userArticle">
+        SELECT * FROM user_article WHERE articleid = #{id}
+    </select>
 
-    <!--<insert id="registerUser" parameterType="java.lang.String">-->
-        <!--INSERT INTO users (username, password, phone) VALUES (#{username}, #{password}, #{phone})-->
-    <!--</insert>-->
+    <select id="findBeanMessageById" parameterType="java.lang.String" resultType="wanAndroidBean">
+        SELECT * FROM wanandroid WHERE id = #{id}
+    </select>
 
-    <!--<select id="userLogin" parameterType="java.lang.String" resultType="user">-->
-        <!--SELECT id, username, phone, avatar, is_admin FROM users WHERE username = #{username} AND password = #{password}-->
-    <!--</select>-->
+    <insert id="collectNewArticle">
+        INSERT INTO wanandroid(apkLink, author, chapterId, chapterName, collect,
+        courseId, desc, envelopePic, fresh, id, link, niceDate, origin, projectLink,
+        publishTime, superChapterId, superChapterName, title, type, userId, visible, zan)
+        VALUES (#{apkLink}, #{author}, #{chapterId}, #{chapterName}, #{collect}, #{courseId},
+        #{desc}, #{envelopePic}, #{fresh}, #{id}, #{link}, #{niceDate}, #{origin}, #{projectLink},
+        #{publishTime}, #{superChapterId}, #{superChapterName}, #{title}, #{type}, #{userId}, #{visible}, #{zan})
+    </insert>
 
-    <!--<select id="findUserByName" parameterType="java.lang.String" resultType="user">-->
-        <!--SELECT id, username, phone, avatar, is_admin FROM users WHERE username=#{username}-->
-    <!--</select>-->
+    <delete id="deleteArticle">
+        DELETE FROM wanandroid WHERE id = #{id}
+    </delete>
 
-    <!--<select id="findUserByPhone" parameterType="java.lang.String" resultType="user">-->
-        <!--SELECT id, username, phone, avatar, is_admin FROM  users WHERE phone = #{phone}-->
-    <!--</select>-->
+    <insert id="addArticleIdInUserArticle">
+        INSERT INTO user_article(userid, articleid) VALUES (#{userid}, #{id})
+    </insert>
 
-    <!--<update id="uploadAvatar" parameterType="user">-->
-        <!--UPDATE users SET avatar = #{avatar} WHERE id = #{id}-->
-    <!--</update>-->
-
-    <!--<insert id="uploadFile" parameterType="user">-->
-        <!--INSERT INTO user_files (file_name, file_path, u_id) VALUES (#{fileName}, #{filePath}, #{id})-->
-    <!--</insert>-->
-
-    <!--<select id="getUserFileList" parameterType="java.lang.Integer" resultType="userFile">-->
-        <!--SELECT id, file_name, file_path FROM user_files WHERE u_id = #{id}-->
-    <!--</select>-->
-
-    <!--<select id="findUserFileById" parameterType="java.lang.Integer" resultMap="userFile">-->
-        <!--SELECT id, file_name, file_path FROM  user_files WHERE id = #{fileId} and u_id = #{id}-->
-    <!--</select>-->
-
-    <!--<delete id="deleteFileById" parameterType="java.lang.Integer">-->
-        <!--DELETE FROM user_files WHERE id = #{fileId} AND u_id = #{id}-->
-    <!--</delete>-->
+    <delete id="deleteArticleIdInUserArticle">
+        DELETE FROM user_article WHERE userid = #{userid} AND articleid = #{id}
+    </delete>
 </mapper>

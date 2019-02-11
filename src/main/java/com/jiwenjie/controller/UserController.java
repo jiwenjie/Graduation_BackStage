@@ -221,14 +221,20 @@ public class UserController {
                     User user = (User) session.getAttribute(Constant.SESSION_USER);
                     String suffix = originalFileName.split("\\.")[1];
 
-//                    String avatarPath = request.getSession().getServletContext().getRealPath("/upload")
+                    // 上传到项目根目录的 upload 文件夹
+                    String avatarPath = request.getSession().getServletContext().getRealPath("/upload") +
+                            File.separator + user.getUsername() +
+                            File.separator + "avatar" + File.separator + System.currentTimeMillis() + "." + suffix;
 //                            + UserFile.separator + user.getUsername() + UserFile.separator + "avatar"
 //                            + UserFile.separator + System.currentTimeMillis() + "." + suffix;
 
-                    String avatarPath = "I:" + File.separator + "ProjectsFolder" + File.separator + "IdeaProject"
-                            + File.separator + "MovieProject" + File.separator + "src" + File.separator + "main"
-                            + File.separator + "webapp" + File.separator + "upload" + File.separator + user.getUsername()
-                            + File.separator + "avatar" + File.separator + System.currentTimeMillis() + "." + suffix;
+                    /**
+                     * 上传到具体的硬盘路径，此时需要配置 tomcat 虚拟路径
+                     */
+//                    String avatarPath = "I:" + File.separator + "ProjectsFolder" + File.separator + "IdeaProject"
+//                            + File.separator + "MovieProject" + File.separator + "src" + File.separator + "main"
+//                            + File.separator + "webapp" + File.separator + "upload" + File.separator + user.getUsername()
+//                            + File.separator + "avatar" + File.separator + System.currentTimeMillis() + "." + suffix;
 
                     System.out.println("savePath: " + avatarPath);
                     File saveFile = new File(avatarPath);

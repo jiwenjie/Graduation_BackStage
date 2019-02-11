@@ -44,7 +44,10 @@
         UPDATE phoneuser SET username = #{username} and profile = #{profile} WHERE userid = #{userid}
     </update>
 
-    <select id="getUserInfo" parameterType="java.lang.Integer">
+    <select id="getUserInfo" parameterType="java.lang.String" resultType="phoneUser">
         SELECT * FROM phoneuser WHERE userid = #{userid}
     </select>
+    <!--<select id="getUserInfo" parameterType="java.lang.Long">-->
+        <!--SELECT * FROM phoneuser WHERE userid = #{userid}-->
+    <!--</select>-->
 </mapper>

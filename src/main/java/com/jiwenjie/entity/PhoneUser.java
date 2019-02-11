@@ -13,11 +13,11 @@ import java.io.Serializable;
 @JsonInclude(JsonInclude.Include.NON_NULL) // 去除返回接口值为 null 的字段
 public class PhoneUser implements Serializable {
 
-    private long userid;
+    private String userid;
     private String username;    // 昵称
     private String userphone;
     private String password;
-    private int continuesigndays;   // 连续登陆多少天，七天一周期
+    private int continuesigndays;   // 连续签到多少天，七天一周期
     private boolean signintoday;    // 在 mysql 中使用
                                     // tinyint 类型。true 为 1，false 0
     private String signintime;
@@ -32,11 +32,11 @@ public class PhoneUser implements Serializable {
     // 个人简介，
     private String profile;
 
-    public long getUserid() {
+    public String getUserid() {
         return userid;
     }
 
-    public void setUserid(int userid) {
+    public void setUserid(String userid) {
         this.userid = userid;
     }
 

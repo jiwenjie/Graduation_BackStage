@@ -31,7 +31,7 @@ public class WanAndroidBean implements Serializable {
     private List<Tag> tags;
     private String title;
     private int type;
-    private int userId;
+    private int userid;
     private int visible;
     private int zan;
 
@@ -195,12 +195,12 @@ public class WanAndroidBean implements Serializable {
         this.type = type;
     }
 
-    public int getUserId() {
-        return userId;
+    public int getUserid() {
+        return userid;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserid(int userid) {
+        this.userid = userid;
     }
 
     public int getVisible() {
