@@ -2,6 +2,8 @@ package com.jiwenjie.service;
 
 import com.jiwenjie.entity.UserArticle;
 import com.jiwenjie.entity.WanAndroidBean;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -71,5 +73,22 @@ public interface CollectService {
      */
     int deleteArticleIdInUserArticle(String userId, int id);
 
-    int operationCollect(int userId, boolean operation);
+    int operationCollect(String userId, boolean operation);
+
+    /**
+     * 改变数据库中的用户收藏文章数量的值
+     */
+    int addCollectCount(String userId, int count);
+
+    int reduceCollectCount(String userId, int count);
+
+    /**
+     * 获取用户此时收藏的文章数量
+     */
+    int findNowUserCollect(String userId);
+
+    /**
+     * 获取收藏表中信息
+     */
+    UserArticle findMessageInUserArticle(String userId, int articleid);
 }

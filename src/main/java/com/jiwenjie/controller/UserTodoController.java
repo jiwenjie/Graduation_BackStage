@@ -32,11 +32,12 @@ public class UserTodoController {
     /**
      * 新建任务
      */
-    @RequestMapping(value = "/createNewTask", method = RequestMethod.GET)
+    @RequestMapping(value = "/createNewTask", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> createNewTask(@RequestParam("userid") String userid, @RequestParam("title") String title,
                                              @RequestParam("content") String content) {
-        System.out.println("用户 id 是" + userid);
+        System.out.println("进入新建接口");
+        System.out.println("用户 id 是" + userid + "\n" + title + "\n" + content);
 
         Map<String, Object> map = new HashMap<>();
         String taskId = CommonUtils.getUserTaskId();
@@ -54,9 +55,10 @@ public class UserTodoController {
     /**
      * 删除创建的任务
      */
-    @RequestMapping(value = "/deleteTask", method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteTask", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> deleteUserTask(@RequestParam("userid") String userid, @RequestParam("todoid") String todoId) {
+        System.out.println("进入删除接口" + userid);
         System.out.println("用户 id 是" + userid);
 
         Map<String, Object> map = new HashMap<>();
@@ -73,9 +75,10 @@ public class UserTodoController {
     /**
      * 改变状态，从未完成变为完成（一旦变为完成之后就不能在改成未完成）
      */
-    @RequestMapping(value = "/changeStatus", method = RequestMethod.GET)
+    @RequestMapping(value = "/changeStatus", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> changeStatus(@RequestParam("userid") String userid, @RequestParam("todoid") String todoId) {
+        System.out.println("进入变更状态接口");
         System.out.println("用户 id 是" + userid);
 
         Map<String, Object> map = new HashMap<>();
@@ -92,18 +95,24 @@ public class UserTodoController {
     /**
      * 分页查询数据
      */
-    @RequestMapping(value = "/getListDataAboutTask", method = RequestMethod.GET)
+    @RequestMapping(value = "/getListDataAboutTask", method = RequestMethod.POST)
     @ResponseBody
-    public Map<String, Object> getListDataAboutTask(@RequestParam("userid") String userid, @RequestParam("page") int page, @RequestParam("limit") int limit) {
-        System.out.println("用户 id 是" + userid);
+    public Map<String, Object> getListDataAboutTask(@RequestParam("userid") String userid,
+                                                    @RequestParam("page") int page,
+                                                    @RequestParam("limit") int limit,
+                                                    @RequestParam("complete") boolean complete) {
+
+        System.out.println("用户 id 是" + userid + "\n" + page + "页" + "\n" + limit);
+
+        // 这里少一个参数，就是查询的时候加上有没有完成的 complete 参数用作限定
 
         Map<String, Object> map = new HashMap<>();
 
         List<TodoBean> beanList;
         if (page == 0 || page == 1) {
-            beanList = userTodoService.getListTask(userid, 0, limit);
+            beanList = userTodoService.getListTask(userid, 0, limit, complete);
         } else {
-            beanList = userTodoService.getListTask(userid, (page - 1) * limit, page * limit);
+            beanList = userTodoService.getListTask(userid, (page - 1) * limit, page * limit, complete);
         }
 
         if (beanList != null && beanList.size() > 0) {
@@ -118,6 +127,30 @@ public class UserTodoController {
                 map = CommonUtils.operationFailed(map, "no have more data", HttpStatus.NOT_FOUND.value());
             }
         }
+        return map;
+    }
+
+    /**
+     * 获取 todoTask 详情
+     */
+    @RequestMapping(value = "/getDetailById", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> getDetailById(@RequestParam("userid") String userid, @RequestParam("todoid") String todoid) {
+        System.out.println("进入详情接口");
+        System.out.println("用户 id 是" + userid);
+
+        Map<String, Object> map = new HashMap<>();
+        TodoBean bean = userTodoService.getDetailById(userid, todoid);
+
+        if (bean != null) {
+            // 说明找到该 task 详情
+            map.put("data", bean);
+            map = CommonUtils.operationSucceed(map);
+        } else {
+            // 说明没有找到该 task 详情
+            map = CommonUtils.operationFailed(map, "can't find task, please try again", HttpStatus.NOT_FOUND.value());
+        }
+
         return map;
     }
 }

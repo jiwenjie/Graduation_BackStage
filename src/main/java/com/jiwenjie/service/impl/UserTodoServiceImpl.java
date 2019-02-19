@@ -36,7 +36,12 @@ public class UserTodoServiceImpl implements UserTodoService {
     }
 
     @Override
-    public List<TodoBean> getListTask(String userid, int start, int end) {
-        return userTodoDao.getListTask(userid, start, end);
+    public List<TodoBean> getListTask(String userid, int start, int end, boolean complete) {
+        return userTodoDao.getListTask(userid, start, end, complete);
+    }
+
+    @Override
+    public TodoBean getDetailById(String userid, String todoid) {
+        return userTodoDao.getDetailById(userid, todoid);
     }
 }

@@ -58,7 +58,27 @@ public class CollectServiceImpl implements CollectService {
     }
 
     @Override
-    public int operationCollect(int userId, boolean operation) {
+    public int operationCollect(String userId, boolean operation) {
         return collectDao.operationCollect(userId, operation);
+    }
+
+    @Override
+    public int addCollectCount(String userId, int count) {
+        return collectDao.addCollectCount(userId, count);
+    }
+
+    @Override
+    public int reduceCollectCount(String userId, int count) {
+        return collectDao.reduceCollectCount(userId, count);
+    }
+
+    @Override
+    public int findNowUserCollect(String userId) {
+        return collectDao.findNowUserCollect(userId);
+    }
+
+    @Override
+    public UserArticle findMessageInUserArticle(String userId, int articleid) {
+        return collectDao.findMessageInUserArticle(userId, articleid);
     }
 }

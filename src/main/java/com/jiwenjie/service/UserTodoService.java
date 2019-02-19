@@ -27,6 +27,10 @@ public interface UserTodoService {
     /**
      * 查询列表
      */
-    List<TodoBean> getListTask(String userid, int start, int end);
+    List<TodoBean> getListTask(String userid, int start, int end, boolean complete);
 
+    /**
+     * 获取详情
+     */
+    TodoBean getDetailById(String userid, String todoid);
 }

@@ -26,6 +26,16 @@ public class PhoneUserServiceImpl implements PhoneUserService {
     }
 
     @Override
+    public int registerUserPhoneNum(String userid, String userphone) {
+        return userDao.registerUserPhoneNum(userid, userphone);
+    }
+
+    @Override
+    public int registerUserNameAndPass(String userid, String username, String password, boolean signout) {
+        return userDao.registerUserNameAndPass(userid, username, password, signout);
+    }
+
+    @Override
     public List<PhoneUser> findAllPhoneUser() {
         return userDao.findAllPhoneUser();
     }
@@ -71,6 +81,11 @@ public class PhoneUserServiceImpl implements PhoneUserService {
     }
 
     @Override
+    public int findUserCollectCount(String userid) {
+        return userDao.findUserCollectCount(userid);
+    }
+
+    @Override
     public int signUp(String userId, int continuedays, boolean signintoday, String signtime, int signtotalday) {
         return userDao.signUp(userId, continuedays, signintoday, signtime, signtotalday);
     }
@@ -78,5 +93,10 @@ public class PhoneUserServiceImpl implements PhoneUserService {
     @Override
     public int logout(String userId) {
         return userDao.logout(userId);
+    }
+
+    @Override
+    public int changeSignUp(String userId, boolean signintoday) {
+        return userDao.changeSignUp(userId, signintoday);
     }
 }

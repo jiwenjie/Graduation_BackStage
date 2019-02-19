@@ -29,6 +29,8 @@ public class PhoneUser implements Serializable {
     private String avatar;      // 头像的网址
     private String bgimageurl;  // 背景图片的 url。默认是头像的高斯模糊
 
+    private boolean signout;    // 标记是否退出账号
+
     // 个人简介，
     private String profile;
 
@@ -150,5 +152,13 @@ public class PhoneUser implements Serializable {
 
     public void setBgimageurl(String bgimageurl) {
         this.bgimageurl = bgimageurl;
+    }
+
+    public boolean isSignout() {
+        return signout;
+    }
+
+    public void setSignout(boolean signout) {
+        this.signout = signout;
     }
 }

@@ -33,6 +33,11 @@ public interface UserTodoDao {
     /**
      * 查询列表
      */
-    List<TodoBean> getListTask(@Param("userid") String userid, @Param("start") int start, @Param("end") int end);
+    List<TodoBean> getListTask(@Param("userid") String userid, @Param("start") int start,
+                               @Param("end") int end, @Param("complete") boolean complete);
 
+    /**
+     * 获取详情
+     */
+    TodoBean getDetailById(@Param("userid") String userid, @Param("todoid") String todoid);
 }

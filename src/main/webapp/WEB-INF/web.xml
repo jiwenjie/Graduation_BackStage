@@ -1,6 +1,6 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -9,43 +9,57 @@
          version="3.1"
          metadata-complete="true">
 
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
 
-  <!-- 配置欢迎页 -->
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+    <!-- 配置欢迎页 -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
-  <!-- 为 Servlet 命名 -->
-  <servlet>
-    <servlet-name>mvc-dispatcher</servlet-name>
-    <!-- DispatcherServlet主要负责流程的控制 -->
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!-- 为 Servlet 命名 -->
+    <servlet>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <!-- DispatcherServlet主要负责流程的控制 -->
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 
-    <!-- contextConfigLocation配置 mvc-dispatcher 加载的配置文件(配置处理器映射器、适配器等等)
-     若不配置，默认加载WEB-INF/servlet名称-servlet(mvc-dispatcher-servlet.xml) -->
-    <!-- 在 servlet 中能够调用 getServletConfig().getInitParameter("param1") 获得参数名对应的值 -->
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring/spring-*.xml</param-value>
-    </init-param>
+        <!-- contextConfigLocation配置 mvc-dispatcher 加载的配置文件(配置处理器映射器、适配器等等)
+         若不配置，默认加载WEB-INF/servlet名称-servlet(mvc-dispatcher-servlet.xml) -->
+        <!-- 在 servlet 中能够调用 getServletConfig().getInitParameter("param1") 获得参数名对应的值 -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/spring-*.xml</param-value>
+        </init-param>
 
-    <!-- 表示启动容器时初始化该Servlet -->
-    <load-on-startup>1</load-on-startup>
-  </servlet>
+        <!-- 表示启动容器时初始化该Servlet -->
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
-  <!-- 为 Servlet 定制 URL -->
-  <servlet-mapping>
-    <servlet-name>mvc-dispatcher</servlet-name>
-    <!-- 表示哪些请求交给 Spring Web MVC 处理， “/” 是用来定义默认 servlet 映射的。也可以如 “*.html” 表示拦截所有以 html 为扩展名的请求。 -->
-    <!--
-    第一种:*.action, 访问以.action结尾，由 DispatcherServlet 进行解析
-    第二种:/, 所有访问的地址由 DispatcherServlet 进行解析，对静态文件的解析需要配置不让 DispatcherServlet 进行解析，
-            使用此种方式和实现 RESTful 风格的 url
-    第三种:/*, 这样配置不对，使用这种配置，最终要转发到一个 jsp 页面时，仍然会由 DispatcherServlet 解析 jsp 地址，
-            不能根据 jsp 页面找到 handler 会报错
-    -->
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+    <!-- 为 Servlet 定制 URL -->
+    <servlet-mapping>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <!-- 表示哪些请求交给 Spring Web MVC 处理， “/” 是用来定义默认 servlet 映射的。也可以如 “*.html” 表示拦截所有以 html 为扩展名的请求。 -->
+        <!--
+        第一种:*.action, 访问以.action结尾，由 DispatcherServlet 进行解析
+        第二种:/, 所有访问的地址由 DispatcherServlet 进行解析，对静态文件的解析需要配置不让 DispatcherServlet 进行解析，
+                使用此种方式和实现 RESTful 风格的 url
+        第三种:/*, 这样配置不对，使用这种配置，最终要转发到一个 jsp 页面时，仍然会由 DispatcherServlet 解析 jsp 地址，
+                不能根据 jsp 页面找到 handler 会报错
+        -->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 
+    <!-- 给所有的中文设置 utf-8 编码 -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <async-supported>true</async-supported>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

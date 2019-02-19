@@ -16,6 +16,14 @@
         INSERT INTO phoneuser (userid, username, password, userphone) VALUES (#{userid}, #{username}, #{password}, #{userphone})
     </insert>
 
+    <insert id="registerUserPhoneNum">
+        INSERT INTO phoneuser (userid, userphone) VALUES (#{userid}, #{userphone})
+    </insert>
+
+    <update id="registerUserNameAndPass">
+        UPDATE phoneuser SET username = #{username}, password = #{password}, signout = #{signout} WHERE userid = #{userid}
+    </update>
+
     <select id="findUserByName" parameterType="java.lang.String" resultType="phoneUser">
         SELECT * FROM phoneuser WHERE username = #{username}
     </select>
@@ -32,19 +40,32 @@
         SELECT * FROM phoneuser WHERE userphone = #{userphone} AND password = #{password}
     </select>
 
-    <update id="updateUserAvatar" parameterType="phoneUser">
+    <update id="updateUserAvatar">
         UPDATE phoneuser SET avatar = #{avatar} WHERE userid = #{userid}
     </update>
 
-    <update id="updateUserBgImage" parameterType="phoneUser">
+    <update id="updateUserBgImage">
         UPDATE phoneuser SET bgimageurl = #{bgImageUrl} WHERE userid = #{userid}
     </update>
 
-    <update id="updateUserInfo" parameterType="phoneUser">
-        UPDATE phoneuser SET username = #{username} and profile = #{profile} WHERE userid = #{userid}
+    <update id="updateUserInfo">
+        UPDATE phoneuser SET username = #{username}, profile = #{profile} WHERE userid = #{userid}
     </update>
 
     <select id="getUserInfo" parameterType="java.lang.String" resultType="phoneUser">
         SELECT * FROM phoneuser WHERE userid = #{userid}
     </select>
+
+    <update id="signUp">
+        UPDATE phoneuser SET continuesigndays = #{continuesigndays}, signintoday = #{signintoday},
+            signintime = #{signintime}, signintotaldays = #{signintotaldays} WHERE userid = #{userid}
+    </update>
+
+    <select id="findUserCollectCount" resultType="java.lang.Integer">
+        SELECT count(*) FROM user_article WHERE userid = #{userid}
+    </select>
+
+    <update id="changeSignUp">
+        UPDATE phoneuser SET signintoday = #{signintoday} WHERE userid = #{userid}
+    </update>
 </mapper>

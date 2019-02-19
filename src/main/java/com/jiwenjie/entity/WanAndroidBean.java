@@ -1,5 +1,7 @@
 package com.jiwenjie.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -9,25 +11,26 @@ import java.util.List;
  * time: 2019-02-06
  * desc: App 中收藏的文章的 bean 类
  */
+@JsonInclude(JsonInclude.Include.NON_NULL) // 去除返回接口值为 null 的字段
 public class WanAndroidBean implements Serializable {
 
-    private String apkLink;
+    private String apklink;
     private String author;
-    private int chapterId;
-    private String chapterName;
+    private int chapterid;
+    private String chaptername;
     private boolean collect;
     private int courseId;
     private String desc;
-    private String envelopePic;
+    private String envelopepic;
     private boolean fresh;
     private int id;
     private String link;
-    private String niceDate;
+    private String nicedate;
     private String origin;
-    private String projectLink;
-    private Long publishTime;
-    private int superChapterId;
-    private String superChapterName;
+    private String projectlink;
+    private Long publishtime;
+    private int superchapterid;
+    private String superchaptername;
     private List<Tag> tags;
     private String title;
     private int type;
@@ -35,12 +38,12 @@ public class WanAndroidBean implements Serializable {
     private int visible;
     private int zan;
 
-    public String getApkLink() {
-        return apkLink;
+    public String getApklink() {
+        return apklink;
     }
 
-    public void setApkLink(String apkLink) {
-        this.apkLink = apkLink;
+    public void setApklink(String apklink) {
+        this.apklink = apklink;
     }
 
     public String getAuthor() {
@@ -51,20 +54,20 @@ public class WanAndroidBean implements Serializable {
         this.author = author;
     }
 
-    public int getChapterId() {
-        return chapterId;
+    public int getChapterid() {
+        return chapterid;
     }
 
-    public void setChapterId(int chapterId) {
-        this.chapterId = chapterId;
+    public void setChapterid(int chapterid) {
+        this.chapterid = chapterid;
     }
 
-    public String getChapterName() {
-        return chapterName;
+    public String getChaptername() {
+        return chaptername;
     }
 
-    public void setChapterName(String chapterName) {
-        this.chapterName = chapterName;
+    public void setChaptername(String chaptername) {
+        this.chaptername = chaptername;
     }
 
     public boolean isCollect() {
@@ -91,12 +94,12 @@ public class WanAndroidBean implements Serializable {
         this.desc = desc;
     }
 
-    public String getEnvelopePic() {
-        return envelopePic;
+    public String getEnvelopepic() {
+        return envelopepic;
     }
 
-    public void setEnvelopePic(String envelopePic) {
-        this.envelopePic = envelopePic;
+    public void setEnvelopepic(String envelopepic) {
+        this.envelopepic = envelopepic;
     }
 
     public boolean isFresh() {
@@ -123,12 +126,12 @@ public class WanAndroidBean implements Serializable {
         this.link = link;
     }
 
-    public String getNiceDate() {
-        return niceDate;
+    public String getNicedate() {
+        return nicedate;
     }
 
-    public void setNiceDate(String niceDate) {
-        this.niceDate = niceDate;
+    public void setNicedate(String nicedate) {
+        this.nicedate = nicedate;
     }
 
     public String getOrigin() {
@@ -139,36 +142,36 @@ public class WanAndroidBean implements Serializable {
         this.origin = origin;
     }
 
-    public String getProjectLink() {
-        return projectLink;
+    public String getProjectlink() {
+        return projectlink;
     }
 
-    public void setProjectLink(String projectLink) {
-        this.projectLink = projectLink;
+    public void setProjectlink(String projectlink) {
+        this.projectlink = projectlink;
     }
 
-    public Long getPublishTime() {
-        return publishTime;
+    public Long getPublishtime() {
+        return publishtime;
     }
 
-    public void setPublishTime(Long publishTime) {
-        this.publishTime = publishTime;
+    public void setPublishtime(Long publishtime) {
+        this.publishtime = publishtime;
     }
 
-    public int getSuperChapterId() {
-        return superChapterId;
+    public int getSuperchapterid() {
+        return superchapterid;
     }
 
-    public void setSuperChapterId(int superChapterId) {
-        this.superChapterId = superChapterId;
+    public void setSuperchapterid(int superchapterid) {
+        this.superchapterid = superchapterid;
     }
 
-    public String getSuperChapterName() {
-        return superChapterName;
+    public String getSuperchaptername() {
+        return superchaptername;
     }
 
-    public void setSuperChapterName(String superChapterName) {
-        this.superChapterName = superChapterName;
+    public void setSuperchaptername(String superchaptername) {
+        this.superchaptername = superchaptername;
     }
 
     public List<Tag> getTags() {

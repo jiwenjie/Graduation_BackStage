@@ -10,18 +10,12 @@ import java.io.Serializable;
  */
 public class TodoBean implements Serializable {
 
-    private int id;
+    private String todoid;
+    private String userid;
     private String title;
     private String content;
     private String time;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private boolean complete;
 
     public String getTitle() {
         return title;
@@ -45,6 +39,30 @@ public class TodoBean implements Serializable {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getTodoid() {
+        return todoid;
+    }
+
+    public void setTodoid(String todoid) {
+        this.todoid = todoid;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public boolean isComplete() {
+        return complete;
+    }
+
+    public void setComplete(boolean complete) {
+        this.complete = complete;
     }
 }
 
