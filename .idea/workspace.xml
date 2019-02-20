@@ -7,42 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9158e2-ee4b-44c3-974a-3ff1647767f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestReplace.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestSubstring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/common/CommonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/common/CommonUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/PhoneUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/PhoneUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/UserTodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/UserTodoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/CollectDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/CollectDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/PhoneUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/PhoneUserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/UserTodoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/UserTodoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/PhoneUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/PhoneUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/TodoBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/TodoBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/UserArticle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/UserArticle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/WanAndroidBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/WanAndroidBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/CollectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/CollectService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/PhoneUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/PhoneUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/UserTodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/UserTodoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/CollectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/CollectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/PhoneUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/PhoneUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/UserTodoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/UserTodoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CollectDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CollectDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserTodoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserTodoDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Graduation_All/WEB-INF/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/Graduation_All/WEB-INF/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Graduation_All/WEB-INF/classes/mapper/CollectDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Graduation_All/WEB-INF/classes/mapper/CollectDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Graduation_All/WEB-INF/classes/mapper/PhoneUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Graduation_All/WEB-INF/classes/mapper/PhoneUserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Graduation_All/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Graduation_All/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Graduation_All/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/Graduation_All/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CollectDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CollectDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PhoneUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PhoneUserDao.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,6 +47,7 @@
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.20" value="1" />
@@ -91,7 +57,7 @@
           <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="27" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -114,7 +80,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="16423" />
+          <entry key="java" value="16426" />
           <entry key="jsp" value="46" />
           <entry key="properties" value="11" />
           <entry key="xml" value="1319" />
@@ -122,7 +88,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="16423" />
+          <entry key="JAVA" value="16426" />
           <entry key="JSP" value="46" />
           <entry key="Properties" value="11" />
           <entry key="SQL" value="45" />
@@ -136,8 +102,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="143" column="28" lean-forward="true" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+            <state relative-caret-position="584">
+              <caret line="115" column="60" lean-forward="true" selection-start-line="115" selection-start-column="60" selection-end-line="115" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -300,8 +266,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -414,7 +381,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -628,11 +594,12 @@
       <workItem from="1550282569876" duration="15847000" />
       <workItem from="1550373571318" duration="13037000" />
       <workItem from="1550448970909" duration="8204000" />
+      <workItem from="1550578395218" duration="2497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181730000" />
+    <option name="totallyTimeSpent" value="184227000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -647,7 +614,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49704143" visible="true" weight="0.055929918" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49704143" visible="true" weight="0.056603774" />
       <window_info id="Structure" order="1" sideWeight="0.5029586" side_tool="true" weight="0.100404315" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1090,10 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
-          <folding>
-            <element signature="e#2263#2264#0" expanded="true" />
-            <element signature="e#2313#2314#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1137,8 +1100,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="143" column="28" lean-forward="true" selection-start-line="143" selection-start-column="28" selection-end-line="143" selection-end-column="28" />
+        <state relative-caret-position="584">
+          <caret line="115" column="60" lean-forward="true" selection-start-line="115" selection-start-column="60" selection-end-line="115" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

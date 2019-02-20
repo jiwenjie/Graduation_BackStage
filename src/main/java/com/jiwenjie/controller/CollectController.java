@@ -106,15 +106,15 @@ public class CollectController {
                     map = CommonUtils.operationSucceed(map);
                     System.out.println("添加映射成功，把 userid 与 article 对应起来成功");
                     // 此时添加映射成功
-//                    int nowCollect = collectService.findNowUserCollect(phoneUserId);
-//                    System.out.println("现在已经收藏了" + nowCollect);
-//                    int count = collectService.addCollectCount(phoneUserId, nowCollect + 1);
-//                    if (count > 0) {
-//                        System.out.println("User collect count change success");
-////                        map = CommonUtils.operationSucceed(map);
-//                    } else {
-//                        System.out.println("User collect article count change failed");
-//                    }
+                    int nowCollect = collectService.findNowUserCollect(phoneUserId);
+                    System.out.println("现在已经收藏了" + nowCollect);
+                    int count = collectService.addCollectCount(phoneUserId, nowCollect + 1);
+                    if (count > 0) {
+                        System.out.println("User collect count change success");
+//                        map = CommonUtils.operationSucceed(map);
+                    } else {
+                        System.out.println("User collect article count change failed");
+                    }
                 } else {
                     System.out.println("添加映射失败，把 userid 与 article 对应失败");
                     map = CommonUtils.operationFailed(map, "add Data Error, please try again", HttpStatus.INTERNAL_SERVER_ERROR.value());
@@ -157,7 +157,7 @@ public class CollectController {
             }
         } else {
             // 删除失败
-            map = CommonUtils.operationFailed(map, "opeartion database error, please try again", HttpStatus.INTERNAL_SERVER_ERROR.value());
+            map = CommonUtils.operationFailed(map, "operation database error, please try again", HttpStatus.INTERNAL_SERVER_ERROR.value());
         }
         return map;
     }
