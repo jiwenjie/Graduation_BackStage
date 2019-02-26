@@ -150,7 +150,6 @@ public class UserTodoController {
             // 说明没有找到该 task 详情
             map = CommonUtils.operationFailed(map, "can't find task, please try again", HttpStatus.NOT_FOUND.value());
         }
-
         return map;
     }
 }

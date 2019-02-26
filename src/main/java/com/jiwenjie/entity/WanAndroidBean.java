@@ -31,7 +31,6 @@ public class WanAndroidBean implements Serializable {
     private Long publishtime;
     private int superchapterid;
     private String superchaptername;
-    private List<Tag> tags;
     private String title;
     private int type;
     private int userid;
@@ -172,14 +171,6 @@ public class WanAndroidBean implements Serializable {
 
     public void setSuperchaptername(String superchaptername) {
         this.superchaptername = superchaptername;
-    }
-
-    public List<Tag> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<Tag> tags) {
-        this.tags = tags;
     }
 
     public String getTitle() {

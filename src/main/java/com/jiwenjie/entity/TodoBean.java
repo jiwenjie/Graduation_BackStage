@@ -1,5 +1,7 @@
 package com.jiwenjie.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,7 @@ import java.io.Serializable;
  * time: 2019-02-06
  * desc: 自己的任务记录安排（笔记）
  */
+@JsonInclude(JsonInclude.Include.NON_NULL) // 去除返回接口值为 null 的字段
 public class TodoBean implements Serializable {
 
     private String todoid;

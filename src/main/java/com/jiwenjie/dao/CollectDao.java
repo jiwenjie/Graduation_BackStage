@@ -15,13 +15,6 @@ import java.util.List;
  */
 @Repository
 public interface CollectDao {
-    /**
-     * 获取收藏文章的列表
-     * start 表示从哪开始，end 表示结束在哪
-     */
-//    List<ArticleBaseBean> getCollectList(@Param("userid") String userId,
-//                                         @Param("start") int page,
-//                                         @Param("end") int limit);
 
     /**
      * 根据 userId 查找该用户收藏了哪些 article id

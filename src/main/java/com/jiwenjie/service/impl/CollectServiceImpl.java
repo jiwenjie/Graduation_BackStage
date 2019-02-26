@@ -1,7 +1,6 @@
 package com.jiwenjie.service.impl;
 
 import com.jiwenjie.dao.CollectDao;
-import com.jiwenjie.entity.ArticleBaseBean;
 import com.jiwenjie.entity.UserArticle;
 import com.jiwenjie.entity.WanAndroidBean;
 import com.jiwenjie.service.CollectService;

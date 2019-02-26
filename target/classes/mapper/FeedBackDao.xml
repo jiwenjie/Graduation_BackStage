@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jiwenjie.dao.FeedBackDao">
+
+    <!-- 配置数据库字段名和实体类对应 -->
+    <resultMap id="feedBack" type="com.jiwenjie.entity.FeedBack" />
+
+    <insert id="createNewTask">
+        INSERT INTO feedback(userid, createtime, content) VALUES (#{userid},
+                    #{createtime}, #{content})
+    </insert>
+</mapper>

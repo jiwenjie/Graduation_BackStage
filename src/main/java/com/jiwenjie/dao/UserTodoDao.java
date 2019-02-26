@@ -2,6 +2,7 @@ package com.jiwenjie.dao;
 
 import com.jiwenjie.entity.TodoBean;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * time: 2019-02-10
  * desc: 有关用户自己新建任务的操作
  */
+@Repository
 public interface UserTodoDao {
 
     /**

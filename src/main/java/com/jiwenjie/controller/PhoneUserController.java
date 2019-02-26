@@ -5,6 +5,7 @@ import com.jiwenjie.common.CommonUtils;
 import com.jiwenjie.common.Constant;
 import com.jiwenjie.common.MD5Crypto;
 import com.jiwenjie.entity.PhoneUser;
+import com.jiwenjie.service.FeedBackService;
 import com.jiwenjie.service.PhoneUserService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,9 @@ public class PhoneUserController {
 
     @Autowired
     private PhoneUserService userService;
+
+    @Autowired
+    private FeedBackService feedBackService;
 
     @Autowired
     private HttpSession session;
@@ -412,6 +416,35 @@ public class PhoneUserController {
         } else {
             map = CommonUtils.operationFailed(map,
                     "don't find this userId, please check and try again", HttpStatus.NOT_FOUND.value());
+        }
+        return map;
+    }
+
+    /**
+     * 用户反馈的接口
+     */
+    @RequestMapping(value = "/feedBack", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> feedBack(@RequestParam("userid") String userid,
+                                        @RequestParam("content") String content) {
+        System.out.println("进入用户反馈接口");
+        Map<String, Object> map = new HashMap<>();
+
+        PhoneUser user = userService.getUserInfo(userid);
+        if (user != null) {
+            // 说明找到了用户
+            String time = CommonUtils.formatDateTime(new Date(), CommonUtils.TYPE_DATE);
+            int rows = feedBackService.feedBack(userid, time, content);
+            if (rows > 0) {
+                System.out.println("插入数据库成功");
+                map = CommonUtils.operationSucceed(map, "反馈成功，谢谢您的反馈，我们会更努力");
+            } else {
+                System.out.println("插入数据库失败");
+                map = CommonUtils.operationFailed(map, "request error， please try again", HttpStatus.INTERNAL_SERVER_ERROR.value());
+            }
+        } else {
+            System.out.println("未找到用户");
+            map =  CommonUtils.operationFailed(map, "未找到该用户", HttpStatus.NOT_FOUND.value());
         }
         return map;
     }

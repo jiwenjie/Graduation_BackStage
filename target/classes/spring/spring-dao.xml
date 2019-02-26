@@ -55,7 +55,7 @@
         <!--配置 mybatis 全局配置文件: mybatis-config.xml -->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
 
-        <!--com.kuky.entity 包,使用别名,多个用;隔开-->
+        <!--com.jiwenjie.entity 包,使用别名,多个用;隔开-->
         <property name="typeAliasesPackage" value="com.jiwenjie.entity"/>
 
         <!-- 扫描 sql 配置文件:mapper 需要的 xml 文件 -->
@@ -74,11 +74,5 @@
     <mvc:interceptors>
         <!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置-->
         <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
-
-        <!-- 登录权限拦截器 -->
-        <!--<bean class="com.jiwenjie.common.interceptor.AuthorizationInterceptor"/>-->
-
-        <!-- 管理员权限拦截器 -->
-        <!--<bean class="com.kuky.common.interceptor.AdminInterceptor"/>-->
     </mvc:interceptors>
 </beans>

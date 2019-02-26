@@ -2,6 +2,7 @@ package com.jiwenjie.dao;
 
 import com.jiwenjie.entity.PhoneUser;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,11 +12,8 @@ import java.util.List;
  * time: 2019-02-07
  * desc:
  */
+@Repository
 public interface PhoneUserDao {
-
-//    void registerPhoneUser(@Param("username") String username,
-//                           @Param("password") String password,
-//                           @Param("userphone") String userphone);   // 注册用户，其他的参数在后台代码中设置
 
     int registerPhoneUser(@Param("userid") String userid,
                            @Param("username") String username,

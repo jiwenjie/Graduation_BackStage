@@ -7,31 +7,14 @@ import java.io.Serializable;
 /**
  * author: Jiwenjie
  * email: Jiwenjie97@gmail.com
- * time: 2018-12-13
+ * time: 2019-02-22
  * desc:
  */
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL) // 去除返回接口值为 null 的字段
 public class UserFile implements Serializable {
-    private int id;
+
     private String fileName;
-    private String filePath;
-
-    @Override
-    public String toString() {
-        return "UserFile{" +
-                "id=" + id +
-                ", fileName='" + fileName + '\'' +
-                ", filePath='" + filePath + '\'' +
-                '}';
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private String fileId;
 
     public String getFileName() {
         return fileName;
@@ -41,11 +24,11 @@ public class UserFile implements Serializable {
         this.fileName = fileName;
     }
 
-    public String getFilePath() {
-        return filePath;
+    public String getFileId() {
+        return fileId;
     }
 
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
+    public void setFileId(String fileId) {
+        this.fileId = fileId;
     }
 }
