@@ -423,17 +423,20 @@ public class PhoneUserController {
     /**
      * 用户反馈的接口
      */
-    @RequestMapping(value = "/feedBack", method = RequestMethod.POST)
+    @RequestMapping(value = "/feedback", method = RequestMethod.POST)
     @ResponseBody
     public Map<String, Object> feedBack(@RequestParam("userid") String userid,
                                         @RequestParam("content") String content) {
         System.out.println("进入用户反馈接口");
         Map<String, Object> map = new HashMap<>();
 
+        System.out.println("用户：" + userid + "\n" + "内容：" + content);
+
         PhoneUser user = userService.getUserInfo(userid);
         if (user != null) {
             // 说明找到了用户
-            String time = CommonUtils.formatDateTime(new Date(), CommonUtils.TYPE_DATE);
+            String time = CommonUtils.formatDateTime(new Date(), CommonUtils.TYPE_DATE_TIME);
+            System.out.println("创建时间是：" + time);
             int rows = feedBackService.feedBack(userid, time, content);
             if (rows > 0) {
                 System.out.println("插入数据库成功");

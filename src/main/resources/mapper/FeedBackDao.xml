@@ -8,8 +8,7 @@
     <!-- 配置数据库字段名和实体类对应 -->
     <resultMap id="feedBack" type="com.jiwenjie.entity.FeedBack" />
 
-    <insert id="createNewTask">
-        INSERT INTO feedback(userid, createtime, content) VALUES (#{userid},
-                    #{createtime}, #{content})
+    <insert id="feedBack">
+        INSERT INTO feedback(userid, createtime, content) VALUES (#{userid}, #{createtime}, #{content})
     </insert>
 </mapper>
