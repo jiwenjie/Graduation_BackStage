@@ -3,7 +3,7 @@
 <body>
 <h2>Hello World!</h2>
 
-<form action="/phoneUser/getUserInfo" method="post">
+<form action="/phoneUser/changeUserInfo" method="post">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br/><br/>
     账&nbsp;号：<input type="text" name="userid"/>
     <br/><br/>

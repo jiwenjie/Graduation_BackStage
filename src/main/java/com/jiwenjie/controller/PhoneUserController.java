@@ -305,7 +305,6 @@ public class PhoneUserController {
             // 是否图片文件
             if (mimeType != null && mimeType.startsWith("image/")) {
                 try {
-//                    PhoneUser user = (PhoneUser) session.getAttribute(Constant.SESSION_PHONE_USER);
                     String suffix = originalFileName.split("\\.")[1];   // 扩展名
 
                     // 上传到项目根目录的 upload 文件夹
@@ -336,7 +335,7 @@ public class PhoneUserController {
                     }
                     image.transferTo(saveFile);    //将文件上传到指定的服务器的位置
                     int rows = userService.updateUserAvatar(userid, finPath.substring(1));  // 存储在数据库中的路径就从 upload 开始就可以了,
-                                                                                            // 这里的 sub 是为了去除第一个 ‘/’
+                    // 这里的 sub 是为了去除第一个 ‘/’
                     if (rows > 0) {
                         System.out.println("上传头像成功");
 //                        // 上传文件成功之后查询 user，之后把最新的 user 返回
@@ -371,6 +370,87 @@ public class PhoneUserController {
     }
 
     /**
+     * 用户背景图片上传
+     */
+    @RequestMapping(value = "/uploadBgImg", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> uploadBgImg(@RequestParam("userid") String userid, @RequestBody MultipartFile bgImg) {
+        // 在 spring 家族中上传头像都是使用 MultipartFile 类。多个文件则是数组类型
+        System.out.println("文件名：" + bgImg.getOriginalFilename() + "\n" + "userid：" + String.valueOf(userid));
+        Map<String, Object> map = new HashMap<>();
+        if (!bgImg.isEmpty()) {
+            String originalFileName = bgImg.getOriginalFilename();
+            String mimeType = request.getServletContext().getMimeType(originalFileName);
+            System.out.println("mimeType: " + mimeType);
+            // 是否图片文件
+            if (mimeType != null && mimeType.startsWith("image/")) {
+                try {
+                    String suffix = originalFileName.split("\\.")[1];   // 扩展名
+
+                    // 上传到项目根目录的 upload 文件夹
+                    String avatarPath = request.getSession().getServletContext().getRealPath("/upload") +
+//                            File.separator + user.getUsername() +
+                            File.separator + "avatar" +
+                            File.separator + System.currentTimeMillis() + "." + suffix;
+
+                    String savePath = avatarPath.substring(avatarPath.indexOf("\\upload"));
+                    String finPath = savePath.replaceAll("\\\\", "/");
+                    System.out.println("savePath：" + savePath);
+                    System.out.println("finPath：" + finPath);
+
+                    /**
+                     * 上传到具体的硬盘路径，此时需要配置 tomcat 虚拟路径
+                     */
+//                    String avatarPath = "I:" + File.separator + "ProjectsFolder" + File.separator + "IdeaProject"
+//                            + File.separator + "MovieProject" + File.separator + "src" + File.separator + "main"
+//                            + File.separator + "webapp" + File.separator + "upload" + File.separator + user.getUsername()
+//                            + File.separator + "avatar" + File.separator + System.currentTimeMillis() + "." + suffix;
+
+                    System.out.println("tomcatPath: " + avatarPath);
+
+                    File saveFile = new File(avatarPath);
+                    if (!saveFile.getParentFile().exists()) {
+                        saveFile.getParentFile().mkdirs();
+                        saveFile.createNewFile();
+                    }
+                    bgImg.transferTo(saveFile);    //将文件上传到指定的服务器的位置
+                    int rows = userService.updateUserAvatar(userid, finPath.substring(1));  // 存储在数据库中的路径就从 upload 开始就可以了,
+                    // 这里的 sub 是为了去除第一个 ‘/’
+                    if (rows > 0) {
+                        System.out.println("上传背景图片成功");
+//                        // 上传文件成功之后查询 user，之后把最新的 user 返回
+                        PhoneUser user = userService.getUserInfo(userid);
+                        if (user != null) {
+                            map.put("data", user);
+                            map = CommonUtils.operationSucceed(map);
+                        } else {
+                            map = CommonUtils.operationFailed(map, "other error", HttpStatus.NOT_FOUND.value());
+                        }
+                    } else {
+                        System.out.println("上传背景图片失败");
+                        map = CommonUtils.operationFailed(map,
+                                "change data failed", HttpStatus.BAD_REQUEST.value());
+                    }
+                } catch (IOException e) {
+                    // 上传过程出错
+                    System.out.println(e.getMessage());
+                    map = CommonUtils.operationFailed(map, "upload fail", HttpStatus.INTERNAL_SERVER_ERROR.value());
+                    e.printStackTrace();
+                }
+            } else {
+                // 不是图片文件返回相关信息
+                map = CommonUtils.operationFailed(map, "please upload an image file", HttpStatus.BAD_REQUEST.value());
+            }
+            // 空文件返回相关
+        } else {
+            System.out.println("empty file");
+            map = CommonUtils.operationFailed(map, "empty file", HttpStatus.BAD_REQUEST.value());
+        }
+        return map;
+    }
+
+
+    /**
      * 签到的接口
      */
     @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
@@ -389,9 +469,9 @@ public class PhoneUserController {
             System.out.println("continue：" + continuedays);
             System.out.println("totalDay：" + totalday);
             System.out.println("signIntoday：" + signIntoday);
-            if (continuedays >= 0 && totalday >=0) {
-                continuedays ++;
-                totalday ++;
+            if (continuedays >= 0 && totalday >= 0) {
+                continuedays++;
+                totalday++;
             }
             if (!signIntoday) {
                 signIntoday = true;
@@ -447,7 +527,7 @@ public class PhoneUserController {
             }
         } else {
             System.out.println("未找到用户");
-            map =  CommonUtils.operationFailed(map, "未找到该用户", HttpStatus.NOT_FOUND.value());
+            map = CommonUtils.operationFailed(map, "未找到该用户", HttpStatus.NOT_FOUND.value());
         }
         return map;
     }

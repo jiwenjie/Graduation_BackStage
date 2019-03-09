@@ -60,6 +60,7 @@ public class CollectController {
                                               @RequestParam("zan") int zan) {
 
         System.out.println("userId" + phoneUserId);
+        System.out.println("收藏接口");
         System.out.println("传递过来的参数信息：" + phoneUserId + "\n" + apkLink + "\n"
                 + author + "\n" + chapterId + "\n" + chapterName + "\n" + collect + "\n"
                 + courseId + "\n" + desc + "\n" + envelopePic + "\n" + fresh + "\n" + link
@@ -80,13 +81,6 @@ public class CollectController {
                 int rows = collectService.addArticleIdInUserArticle(phoneUserId, id);  // 在中间表添加映射条件
                 if (rows > 0) {     // 添加映射成功
                     map = CommonUtils.operationSucceed(map);
-//                    int count = collectService.addCollectCount(phoneUserId, collectService.findNowUserCollect(phoneUserId));
-//                    if (count > 0) {
-//                        System.out.println("User collect count change success");
-//                        map = CommonUtils.operationSucceed(map);
-//                    } else {
-//                        System.out.println("User collect count change failed");
-//                    }
                 } else {    // 添加映射失败
                     map = CommonUtils.operationFailed(map, "this article has been collect", HttpStatus.INTERNAL_SERVER_ERROR.value());
                 }
@@ -105,16 +99,6 @@ public class CollectController {
                 if (addMappingRows > 0) {
                     map = CommonUtils.operationSucceed(map);
                     System.out.println("添加映射成功，把 userid 与 article 对应起来成功");
-                    // 此时添加映射成功
-//                    int nowCollect = collectService.findNowUserCollect(phoneUserId);
-//                    System.out.println("现在已经收藏了" + nowCollect);
-//                    int count = collectService.addCollectCount(phoneUserId, nowCollect + 1);
-//                    if (count > 0) {
-//                        System.out.println("User collect count change success");
-////                        map = CommonUtils.operationSucceed(map);
-//                    } else {
-//                        System.out.println("User collect article count change failed");
-//                    }
                 } else {
                     System.out.println("添加映射失败，把 userid 与 article 对应失败");
                     map = CommonUtils.operationFailed(map, "add Data Error, please try again", HttpStatus.INTERNAL_SERVER_ERROR.value());
@@ -134,6 +118,7 @@ public class CollectController {
     @ResponseBody
     public Map<String, Object> cancelCollectArticle(@RequestParam("userid") String userId, @RequestParam("id") int id) {
         System.out.println("用户 id 是" + userId + "\n" + "文章 id 是" + id);
+        System.out.println("取消收藏接口");
 
         Map<String, Object> map = new HashMap<>();
         int rows = collectService.deleteArticleIdInUserArticle(userId, id); // 从 userArticle 的中间表中删除对应关系
