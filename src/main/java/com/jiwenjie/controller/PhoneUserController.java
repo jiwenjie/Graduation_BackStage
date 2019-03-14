@@ -309,7 +309,6 @@ public class PhoneUserController {
 
                     // 上传到项目根目录的 upload 文件夹
                     String avatarPath = request.getSession().getServletContext().getRealPath("/upload") +
-//                            File.separator + user.getUsername() +
                             File.separator + "avatar" +
                             File.separator + System.currentTimeMillis() + "." + suffix;
 
@@ -376,6 +375,7 @@ public class PhoneUserController {
     @ResponseBody
     public Map<String, Object> uploadBgImg(@RequestParam("userid") String userid, @RequestBody MultipartFile bgImg) {
         // 在 spring 家族中上传头像都是使用 MultipartFile 类。多个文件则是数组类型
+        System.out.println("进入背景图片上传接口");
         System.out.println("文件名：" + bgImg.getOriginalFilename() + "\n" + "userid：" + String.valueOf(userid));
         Map<String, Object> map = new HashMap<>();
         if (!bgImg.isEmpty()) {
@@ -389,7 +389,6 @@ public class PhoneUserController {
 
                     // 上传到项目根目录的 upload 文件夹
                     String avatarPath = request.getSession().getServletContext().getRealPath("/upload") +
-//                            File.separator + user.getUsername() +
                             File.separator + "avatar" +
                             File.separator + System.currentTimeMillis() + "." + suffix;
 
@@ -397,14 +396,6 @@ public class PhoneUserController {
                     String finPath = savePath.replaceAll("\\\\", "/");
                     System.out.println("savePath：" + savePath);
                     System.out.println("finPath：" + finPath);
-
-                    /**
-                     * 上传到具体的硬盘路径，此时需要配置 tomcat 虚拟路径
-                     */
-//                    String avatarPath = "I:" + File.separator + "ProjectsFolder" + File.separator + "IdeaProject"
-//                            + File.separator + "MovieProject" + File.separator + "src" + File.separator + "main"
-//                            + File.separator + "webapp" + File.separator + "upload" + File.separator + user.getUsername()
-//                            + File.separator + "avatar" + File.separator + System.currentTimeMillis() + "." + suffix;
 
                     System.out.println("tomcatPath: " + avatarPath);
 
@@ -414,7 +405,7 @@ public class PhoneUserController {
                         saveFile.createNewFile();
                     }
                     bgImg.transferTo(saveFile);    //将文件上传到指定的服务器的位置
-                    int rows = userService.updateUserAvatar(userid, finPath.substring(1));  // 存储在数据库中的路径就从 upload 开始就可以了,
+                    int rows = userService.updateUserBgImage(userid, finPath.substring(1));  // 存储在数据库中的路径就从 upload 开始就可以了,
                     // 这里的 sub 是为了去除第一个 ‘/’
                     if (rows > 0) {
                         System.out.println("上传背景图片成功");
@@ -448,7 +439,6 @@ public class PhoneUserController {
         }
         return map;
     }
-
 
     /**
      * 签到的接口
