@@ -389,7 +389,7 @@ public class PhoneUserController {
 
                     // 上传到项目根目录的 upload 文件夹
                     String avatarPath = request.getSession().getServletContext().getRealPath("/upload") +
-                            File.separator + "avatar" +
+                            File.separator + "bgImg" +
                             File.separator + System.currentTimeMillis() + "." + suffix;
 
                     String savePath = avatarPath.substring(avatarPath.indexOf("\\upload"));

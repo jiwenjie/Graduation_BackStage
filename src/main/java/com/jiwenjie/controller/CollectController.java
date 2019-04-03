@@ -125,21 +125,21 @@ public class CollectController {
         if (rows > 0) {
             map = CommonUtils.operationSucceed(map);
             // 删除成功,判断还有没有其他的用户收藏了该文章，没有就把这篇文章删除，有的话不进行其他操作
-            int count = collectService.reduceCollectCount(userId, collectService.findNowUserCollect(userId));
-            if (count > 0) {
-                System.out.println("PhoneUser data change success");
-            } else {
-                System.out.println("PhoneUser data change failed");
-            }
-
-            List<UserArticle> userArticleList = collectService.getAllListInfo(id);
-            if (userArticleList == null || userArticleList.size() == 0) {
-                // 说明没有其他用户收藏该文章了
-                int deleteRow = collectService.deleteArticle(id);
-                if (deleteRow > 0) {
-                    System.out.println("删除无用文章内容成功");
-                }
-            }
+//            int count = collectService.reduceCollectCount(userId, collectService.findNowUserCollect(userId));
+//            if (count > 0) {
+//                System.out.println("PhoneUser data change success");
+//            } else {
+//                System.out.println("PhoneUser data change failed");
+//            }
+//
+//            List<UserArticle> userArticleList = collectService.getAllListInfo(id);
+//            if (userArticleList == null || userArticleList.size() == 0) {
+//                // 说明没有其他用户收藏该文章了
+//                int deleteRow = collectService.deleteArticle(id);
+//                if (deleteRow > 0) {
+//                    System.out.println("删除无用文章内容成功");
+//                }
+//            }
         } else {
             // 删除失败
             map = CommonUtils.operationFailed(map, "operation database error, please try again", HttpStatus.INTERNAL_SERVER_ERROR.value());

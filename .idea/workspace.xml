@@ -7,8 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9158e2-ee4b-44c3-974a-3ff1647767f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/image/555.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/66.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/as.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/PhoneUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/PhoneUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestReplace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestReplace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,21 +47,21 @@
     <session id="1477620579">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="20" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="10" />
-          <entry key="project.open.time.11" value="6" />
-          <entry key="project.open.time.12" value="3" />
+          <entry key="project.open.time.10" value="11" />
+          <entry key="project.open.time.11" value="9" />
+          <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="2" />
-          <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.14" value="4" />
           <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="2" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="3" />
-          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.20" value="2" />
-          <entry key="project.open.time.21" value="2" />
+          <entry key="project.open.time.21" value="3" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.25" value="1" />
@@ -61,34 +69,34 @@
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="7" />
-          <entry key="project.opened" value="54" />
+          <entry key="project.opened" value="63" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="10" />
-          <entry key="java" value="340" />
+          <entry key="java" value="347" />
           <entry key="jsp" value="15" />
           <entry key="properties" value="15" />
           <entry key="rnc" value="1" />
           <entry key="sql" value="1" />
-          <entry key="xml" value="124" />
+          <entry key="xml" value="125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="10" />
-          <entry key="JAVA" value="340" />
+          <entry key="JAVA" value="347" />
           <entry key="JSP" value="15" />
           <entry key="Properties" value="15" />
           <entry key="RNG Compact" value="1" />
           <entry key="SQL" value="1" />
-          <entry key="XML" value="124" />
+          <entry key="XML" value="125" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="17350" />
+          <entry key="java" value="17689" />
           <entry key="jsp" value="49" />
           <entry key="properties" value="12" />
           <entry key="xml" value="1397" />
@@ -96,7 +104,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="17350" />
+          <entry key="JAVA" value="17689" />
           <entry key="JSP" value="49" />
           <entry key="Properties" value="12" />
           <entry key="SQL" value="52" />
@@ -107,23 +115,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2808">
-              <caret line="132" column="13" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
+            <state relative-caret-position="152">
+              <caret line="126" column="27" lean-forward="true" selection-start-line="126" selection-start-column="27" selection-end-line="126" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/PhoneUserController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/service/PhoneUserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="315" column="87" selection-start-line="315" selection-start-column="81" selection-end-line="315" selection-end-column="87" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="124">
+              <caret line="50" column="7" lean-forward="true" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/PhoneUserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="49" column="40" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -142,7 +165,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>signUp</find>
       <find>简介</find>
       <find>updateUserInfo</find>
       <find>距离上次签到时间太短</find>
@@ -172,6 +194,7 @@
       <find>login</find>
       <find>getUserInfo</find>
       <find>进入背景图片上传接口</find>
+      <find>updateUserBgImage</find>
     </findStrings>
     <dirStrings>
       <dir>I:\IdeaWorkSpace\Graduation_All\src</dir>
@@ -183,8 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/logback.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/common/MD5Crypto.java" />
@@ -197,7 +218,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/Tag.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/PhoneUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestTime.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/PhoneUserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/PhoneUserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
@@ -208,9 +228,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/UserTodoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/UserArticle.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/CollectService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestReplace.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/common/CommonUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CollectDao.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/WanAndroidBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/CollectServiceImpl.java" />
@@ -232,8 +250,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/FeedBackDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/FeedBackDao.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/as.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestTime.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestReplace.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/PhoneUserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java" />
       </list>
     </option>
   </component>
@@ -274,8 +297,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="215" />
-    <option name="y" value="70" />
+    <option name="x" value="270" />
+    <option name="y" value="167" />
     <option name="width" value="1700" />
     <option name="height" value="970" />
   </component>
@@ -287,8 +310,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -347,15 +370,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jiwenjie" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Graduation_All" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Graduation_All" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jiwenjie" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -365,56 +379,49 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jiwenjie" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Graduation_All" type="b2602c69:ProjectViewProjectNode" />
               <item name="Graduation_All" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Graduation_All" type="b2602c69:ProjectViewProjectNode" />
               <item name="Graduation_All" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Graduation_All" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Graduation_All" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552390801531" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554273132991" />
     <property name="last_opened_file_path" value="I:/IdeaProjects/RearDemo-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.jiwenjie.test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="I:\IdeaWorkSpace\Graduation_All\image" />
       <recent name="I:\IdeaWorkSpace\Graduation_All\sql" />
       <recent name="I:\IdeaWorkSpace\Graduation_All\src\main\resources\mapper" />
       <recent name="I:\IdeaWorkSpace\Graduation_All\src\main\resources" />
@@ -439,6 +446,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.jiwenjie.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.jiwenjie.test.Main" />
+      <module name="GraduationBackground" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jiwenjie.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -563,10 +583,12 @@
       <item itemvalue="Application.TestTime" />
       <item itemvalue="Application.TestSubstring" />
       <item itemvalue="Application.TestReplace" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestReplace" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestSubstring" />
         <item itemvalue="Application.MD5Crypto" />
         <item itemvalue="Application.TestTime" />
@@ -637,11 +659,20 @@
       <workItem from="1552275965101" duration="599000" />
       <workItem from="1552388120954" duration="2308000" />
       <workItem from="1552394590352" duration="1254000" />
+      <workItem from="1552525392203" duration="2717000" />
+      <workItem from="1552813737571" duration="2389000" />
+      <workItem from="1552873017618" duration="836000" />
+      <workItem from="1552981945665" duration="711000" />
+      <workItem from="1553521236230" duration="987000" />
+      <workItem from="1553603908639" duration="1418000" />
+      <workItem from="1553689948326" duration="792000" />
+      <workItem from="1553997636000" duration="447000" />
+      <workItem from="1554261576051" duration="2408000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230978000" />
+    <option name="totallyTimeSpent" value="243683000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -656,7 +687,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49704143" visible="true" weight="0.035714287" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49704143" visible="true" weight="0.08423181" />
       <window_info id="Structure" order="1" sideWeight="0.5029586" side_tool="true" weight="0.100404315" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -666,16 +697,16 @@
       <window_info id="Web" order="7" sideWeight="0.5029586" side_tool="true" weight="0.100404315" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.081871346" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.85175204" visible="true" weight="0.16812865" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.85175204" visible="true" weight="0.17836258" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49932614" weight="0.50438595" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932614" weight="0.7383041" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49932614" weight="0.27631578" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.374269" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32894737" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.6461988" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067383" side_tool="true" weight="0.7002924" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.8055556" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.7909357" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32894737" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.5409357" />
@@ -770,24 +801,12 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/ArticleBean.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/entity/ArticleBaseBean.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/UserDao.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/service/UserService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/service/impl/UserServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/UserDao.xml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/UserController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/UserTodoDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/PhoneUserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -848,13 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1272">
           <caret line="53" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="65" column="13" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1057,20 +1069,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2808">
-          <caret line="132" column="13" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
+        <state relative-caret-position="2640">
+          <caret line="111" column="21" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/test/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="72" column="30" selection-start-line="72" selection-start-column="30" selection-end-line="72" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/test/TestReplace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/test/as.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="39" column="26" selection-end-line="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/PhoneUserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="315" column="87" selection-start-line="315" selection-start-column="81" selection-end-line="315" selection-end-column="87" />
+        <state relative-caret-position="182">
+          <caret line="407" column="53" lean-forward="true" selection-start-line="407" selection-start-column="53" selection-end-line="407" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PhoneUserDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/dao/PhoneUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="49" column="40" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/service/PhoneUserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="50" column="7" lean-forward="true" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/jiwenjie/controller/CollectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="126" column="27" lean-forward="true" selection-start-line="126" selection-start-column="27" selection-end-line="126" selection-end-column="27" />
         </state>
       </provider>
     </entry>

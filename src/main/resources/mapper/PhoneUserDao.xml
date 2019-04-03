@@ -45,7 +45,7 @@
     </update>
 
     <update id="updateUserBgImage">
-        UPDATE phoneuser SET bgimageurl = #{bgImageUrl} WHERE userid = #{userid}
+        UPDATE phoneuser SET bgimageurl = #{bgimageurl} WHERE userid = #{userid}
     </update>
 
     <update id="updateUserInfo">
