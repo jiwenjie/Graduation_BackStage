@@ -62,8 +62,8 @@ public class CollectServiceImpl implements CollectService {
     }
 
     @Override
-    public int addCollectCount(String userId, int count) {
-        return collectDao.addCollectCount(userId, count);
+    public int updateCollectCount(String userId, int count) {
+        return collectDao.updateCollectCount(userId, count);
     }
 
     @Override

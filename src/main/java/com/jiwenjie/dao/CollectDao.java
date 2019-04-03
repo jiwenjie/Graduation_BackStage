@@ -90,7 +90,7 @@ public interface CollectDao {
     /**
      * 改变数据库中的用户收藏文章数量的值
      */
-    int addCollectCount(@Param("userid") String userId, @Param("collectioncount") int count);
+    int updateCollectCount(@Param("userid") String userId, @Param("collectioncount") int count);
 
     int reduceCollectCount(@Param("userid") String userId, @Param("collectioncount") int count);
 

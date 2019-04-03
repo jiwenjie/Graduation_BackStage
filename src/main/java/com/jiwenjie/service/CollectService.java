@@ -78,7 +78,7 @@ public interface CollectService {
     /**
      * 改变数据库中的用户收藏文章数量的值
      */
-    int addCollectCount(String userId, int count);
+    int updateCollectCount(String userId, int count);
 
     int reduceCollectCount(String userId, int count);
 
