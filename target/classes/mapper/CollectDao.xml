@@ -56,7 +56,7 @@
         SELECT collectioncount FROM phoneuser WHERE userid = #{userid}
     </select>
 
-    <update id="addCollectCount">
+    <update id="updateCollectCount">
         UPDATE phoneuser SET collectioncount = #{collectioncount} WHERE userid = #{userid}
     </update>
 
