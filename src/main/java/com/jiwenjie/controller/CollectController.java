@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -125,9 +124,7 @@ public class CollectController {
 
         Map<String, Object> map = new HashMap<>();
         int rows = collectService.deleteArticleIdInUserArticle(userId, id); // 从 userArticle 的中间表中删除对应关系
-
         collectService.reduceCollectCount(userId, collectService.findNowUserCollect(userId));
-
         if (rows > 0) {
             map = CommonUtils.operationSucceed(map);
             int count = collectService.findNowUserCollect(userId);

@@ -53,7 +53,7 @@
     </delete>
 
     <select id="findNowUserCollect" resultType="java.lang.Integer">
-        SELECT collectioncount FROM phoneuser WHERE userid = #{userid}
+        SELECT IFNULL(collectioncount,0) FROM phoneuser  WHERE userid = #{userid}
     </select>
 
     <update id="updateCollectCount">
