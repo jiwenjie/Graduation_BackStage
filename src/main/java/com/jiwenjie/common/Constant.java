@@ -7,6 +7,5 @@ package com.jiwenjie.common;
  * desc:
  */
 public class Constant {
-    public static final String SESSION_USER = "session_user";
     public static final String SESSION_PHONE_USER = "session_phone_user";
 }
